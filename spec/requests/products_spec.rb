@@ -10,20 +10,17 @@ RSpec.describe ProductsController do
         it 'returns a proper JSON' do
             product = create :product
             get '/products'
-            body = JSON.parse(response.body).deep_symbolize_keys
-            expect(body).to eq(
-                data: [
-                    {
-                        id: product.id.to_s,
-                        type: 'products',
-                        attributes: {
-                            productName: product.productName,
-                            description: product.description,
-                            price: product.price.to_s
-                        }
-                    }
-                ]
-            )
+            expect(json_data.length).to eq(1)
+            expected = json_data.first
+            aggregate_failures do
+                expect(expected[:id]).to eq(product.id.to_s)
+                expect(expected[:type]).to eq('products')
+                expect(expected[:attributes]).to eq(
+                    productName: product.productName,
+                    description: product.description,
+                    price: product.price.to_s
+                )
+            end
         end
     end
 end
