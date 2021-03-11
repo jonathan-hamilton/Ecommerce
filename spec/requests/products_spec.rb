@@ -34,5 +34,21 @@ RSpec.describe ProductsController do
                 eq([recent_product.id, older_product.id])
             )        
         end
+
+        it 'paginates results' do
+            product1, product2, product3 = create_list(:product, 3)
+            get '/products', params: { page: { number: 2, size: 1 } }
+            expect(json_data.length).to eq(1)
+            expect(json_data.first[:id]).to eq(product2.id.to_s)
+        end
+
+        it 'contains pagination links in the response' do
+            product1, product2, product3 = create_list(:product, 3)
+            get '/products', params: { page: { number: 2, size: 1 } }
+            expect(json[:links].length).to eq(5)
+            expect(json[:links].keys).to contain_exactly(
+                :first,:prev,:next,:last,:self
+            )
+        end       
     end
 end
