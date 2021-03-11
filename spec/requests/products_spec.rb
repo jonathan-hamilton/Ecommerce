@@ -22,5 +22,17 @@ RSpec.describe ProductsController do
                 )
             end
         end
+
+        it 'returns products in the proper order' do
+            older_product = 
+                create(:product, created_at: 1.hour.ago)
+            recent_product = create(:product)
+            
+            get '/products'
+            ids = json_data.map { |item| item[:id].to_i }
+            expect(ids).to(
+                eq([recent_product.id, older_product.id])
+            )        
+        end
     end
 end

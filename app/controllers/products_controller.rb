@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
     def index
-        products = Product.all
+        products = Product.recent
         render json: serializer.new(products), status: :ok       
     end
 

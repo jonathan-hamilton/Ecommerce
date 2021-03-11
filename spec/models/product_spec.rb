@@ -26,4 +26,22 @@ RSpec.describe Product, type: :model do
     # typeId
     # brandId
   end
+
+  describe '.recent' do
+    it 'returns products in the correct order' do
+      older_product = 
+        create(:product, created_at: 1.hour.ago)
+      recent_product = create(:product)
+
+      expect(described_class.recent).to eq(
+        [recent_product, older_product]
+      )
+
+      recent_product.update_column(:created_at, 2.hours.ago)
+
+      expect(described_class.recent).to eq(
+        [ older_product, recent_product]
+      )
+    end
+  end
 end
