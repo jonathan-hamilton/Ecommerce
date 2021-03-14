@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :locations
+  resources :stores
   resources :categories
   resources :types
   resources :brands

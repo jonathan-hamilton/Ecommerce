@@ -31,3 +31,11 @@ Type.create(typeName: "Type 3")
 Category.create(categoryName: "Category 1")
 Category.create(categoryName: "Category 2")
 Category.create(categoryName: "Category 3")
+
+Store.create(storeName: "Store 1")
+Store.create(storeName: "Store 2")
+Store.create(storeName: "Store 3")
+
+Location.create(zipCode:00001)
+Location.create(zipCode:00002)
+Location.create(zipCode:00003)
