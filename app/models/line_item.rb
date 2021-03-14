@@ -1,6 +1,6 @@
 class LineItem < ApplicationRecord
     
 
-    has_many :products
+    has_one :product
     belongs_to :orders
 end

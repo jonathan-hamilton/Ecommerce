@@ -19,3 +19,7 @@ Order.create(orderTotal: 300.00, customer_id: 3)
 Customer.create!(name:"Jon", email:"jon@test.com")
 Customer.create!(name: "Riley", email:"riley@test.com")
 Customer.create!(name:"Jane", email:"jane@test.com")
+
+Brand.create(brandName: "Brand 1")
+Brand.create(brandName: "Brand 2")
+Brand.create(brandName: "Brand 3")
