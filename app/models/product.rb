@@ -5,6 +5,7 @@ class Product < ApplicationRecord
 
     belongs_to :line_item
     has_one :brand
+    has_one :type
 
     scope :recent, -> { order(created_at: :desc) }
     

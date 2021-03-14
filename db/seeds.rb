@@ -23,3 +23,7 @@ Customer.create!(name:"Jane", email:"jane@test.com")
 Brand.create(brandName: "Brand 1")
 Brand.create(brandName: "Brand 2")
 Brand.create(brandName: "Brand 3")
+
+Type.create(typeName: "Type 1")
+Type.create(typeName: "Type 2")
+Type.create(typeName: "Type 3")
