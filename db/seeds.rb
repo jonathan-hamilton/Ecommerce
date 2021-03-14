@@ -27,3 +27,7 @@ Brand.create(brandName: "Brand 3")
 Type.create(typeName: "Type 1")
 Type.create(typeName: "Type 2")
 Type.create(typeName: "Type 3")
+
+Category.create(categoryName: "Category 1")
+Category.create(categoryName: "Category 2")
+Category.create(categoryName: "Category 3")
