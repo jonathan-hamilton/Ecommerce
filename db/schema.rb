@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_225533) do
+ActiveRecord::Schema.define(version: 2021_03_14_023029) do
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "orderTotal"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.boolean "featured"
