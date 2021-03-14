@@ -11,3 +11,11 @@ Product.create(productName: "Product 2", description: "Description 2", price: 20
 Product.create(productName: "Product 3", description: "Description 3", price: 300.00)
 Product.create(productName: "Product 4", description: "Description 4", price: 400.00)
 Product.create(productName: "Product 5", description: "Description 5", price: 500.00)
+
+Order.create(orderTotal: 100.00, customer_id: 1)
+Order.create(orderTotal: 200.00, customer_id: 2)
+Order.create(orderTotal: 300.00, customer_id: 3)
+
+Customer.create!(name:"Jon", email:"jon@test.com")
+Customer.create!(name: "Riley", email:"riley@test.com")
+Customer.create!(name:"Jane", email:"jane@test.com")
