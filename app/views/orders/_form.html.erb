@@ -12,8 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :ordertotal %>
-    <%= form.text_field :ordertotal %>
+    <%= form.label :orderTotal %>
+    <%= form.text_field :orderTotal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.number_field :customer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :store_id %>
+    <%= form.number_field :store_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :line_item_id %>
+    <%= form.number_field :line_item_id %>
   </div>
 
   <div class="actions">

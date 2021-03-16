@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :line_item do
-    quantity { "" }
+    quantity { 1 }
+    product_id { 1 }
   end
 end

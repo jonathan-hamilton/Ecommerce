@@ -3,8 +3,7 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    render json: Order.all
-    # @orders = Order.all
+    @orders = Order.all
   end
 
   # GET /orders/1 or /orders/1.json
@@ -65,6 +64,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:ordertotal)
+      params.require(:order).permit(:orderTotal, :customer_id, :store_id, :line_item_id)
     end
 end

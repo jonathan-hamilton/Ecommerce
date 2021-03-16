@@ -1,6 +1,7 @@
 class LineItem < ApplicationRecord
-    
+    validates :quantity, presence: true
+    validates :product_id, presence: true
 
-    has_one :product
-    has_one :orders
+    belongs_to :order
+
 end
