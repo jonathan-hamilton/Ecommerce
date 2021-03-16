@@ -53,9 +53,9 @@ Location.create(zipCode:00001)
 Location.create(zipCode:00002)
 Location.create(zipCode:00003)
 
-Store.create(storeName: "Store 1")
-Store.create(storeName: "Store 2")
-Store.create(storeName: "Store 3")
+Store.create(storeName: "Store 1", location_id:1)
+Store.create(storeName: "Store 2", location_id:2)
+Store.create(storeName: "Store 3", location_id:3)
 
 
 

@@ -1,9 +1,6 @@
-class Store < ApplicationRecord   
-    validates :location_id, presence: true
+class Store < ApplicationRecord
     validates :storeName, presence: true
+    validates :location_id, presence: true
 
-    has_many :orders
-    has_one :location
-    has_many :product_stores
-    has_many :products, through: :product_stores
+    belongs_to :location
 end

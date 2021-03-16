@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Storename</th>
+      <th>Location</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @stores.each do |store| %>
       <tr>
         <td><%= store.storeName %></td>
+        <td><%= store.location_id %></td>
         <td><%= link_to 'Show', store %></td>
         <td><%= link_to 'Edit', edit_store_path(store) %></td>
         <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>

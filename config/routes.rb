@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :stores
   resources :products
   resources :locations
-  resources :stores
   resources :categories
   resources :types
   resources :brands
