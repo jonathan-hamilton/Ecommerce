@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_194051) do
+ActiveRecord::Schema.define(version: 2021_03_15_003831) do
 
   create_table "brands", force: :cascade do |t|
     t.string "brandName"
@@ -52,14 +52,19 @@ ActiveRecord::Schema.define(version: 2021_03_14_194051) do
     t.integer "customer_id"
   end
 
+  create_table "product_stores", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "store_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.boolean "featured"
     t.string "productName"
     t.text "description"
     t.decimal "price"
-    t.integer "categoryId"
-    t.integer "typeId"
-    t.integer "brandId"
+    t.integer "category_id"
+    t.integer "type_id"
+    t.integer "brand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
