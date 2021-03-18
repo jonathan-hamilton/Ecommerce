@@ -1,0 +1,6 @@
+Product.create!(productName: "Product 1", description: "Description 1", price: 100.00, brand_id: Brand.find(1), type_id: Type.find(1), category_id: Category.find(1))
+Product.create!(productName: "Product 2", description: "Description 2", price: 200.00, brand_id: 2, type_id: 2, category_id: 2)
+Product.create!(productName: "Product 3", description: "Description 3", price: 300.00, brand_id: 3, type_id: 3, category_id: 3)
+Product.create!(productName: "Product 4", description: "Description 4", price: 400.00, brand_id: 1, type_id: 1, category_id: 3)
+Product.create!(productName: "Product 5", description: "Description 5", price: 500.00, brand_id: 2, type_id: 2, category_id: 2)
+Product.create!(productName: "Product 6", description: "Description 6", price: 600.00, brand_id: 3, type_id: 3, category_id: 1)

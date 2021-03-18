@@ -3,5 +3,6 @@ class Order < ApplicationRecord
     # validates :customer_id, presence: true
     # validates :store_id, presence: true
 
-    has_many :line_items
+    
+    belongs_to :line_item
 end
