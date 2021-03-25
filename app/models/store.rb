@@ -3,4 +3,5 @@ class Store < ApplicationRecord
     validates :location_id, presence: true
 
     belongs_to :location
+    has_many :orders
 end
