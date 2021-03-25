@@ -1,5 +1,6 @@
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: %i[ show edit update destroy ]
+  Rails.logger = Logger.new(STDOUT)
 
   # GET /line_items or /line_items.json
   def index
@@ -22,8 +23,10 @@ class LineItemsController < ApplicationController
   # POST /line_items or /line_items.json
   def create
     @line_item = LineItem.new(line_item_params)
+    #@line_item = LineItem.new(quantity:4, product_id:4)
 
     respond_to do |format|
+
       if @line_item.save
         format.html { redirect_to @line_item, notice: "Line item was successfully created." }
         format.json { render :show, status: :created, location: @line_item }

@@ -10,6 +10,6 @@ class Product < ApplicationRecord
     belongs_to :type
     belongs_to :brand
 
-    has_one :line_item
+    has_many :line_item
     
 end
