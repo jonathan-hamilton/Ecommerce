@@ -9,7 +9,9 @@ class Product < ApplicationRecord
     belongs_to :category
     belongs_to :type
     belongs_to :brand
-
     has_many :line_item
+
+    has_many :product_stores
+    has_many :stores, through: :product_stores
     
 end
