@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index]
   root 'pages#home'
+  get 'stores', to: 'stores#new'
 end
