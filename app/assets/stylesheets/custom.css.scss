@@ -1,0 +1,25 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+  background-color: #f0f1e8 !important;
+} 
+
+.footer{
+    background-color: #f0f1e8 !important;
+}
+
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: rgb(58, 134, 14);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.jumbotron {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(58, 134, 14);
+    background-color:#f0f1e8;    
+}
