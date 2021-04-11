@@ -1,29 +1,54 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Stores</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Storename</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stores.each do |store| %>
-      <tr>
-        <td><%= store.storeName %></td>
-        <td><%= store.location_id %></td>
-        <td><%= link_to 'Show', store %></td>
-        <td><%= link_to 'Edit', edit_store_path(store) %></td>
-        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Store', new_store_path %>
+<div class="container-fluid">
+  <div class="store-search-container">
+    <div class="store-filter-column col-3">
+      <h6>Filters</h6>
+      <div class="input-group mb-3 mt-3">
+        <div class="custom-control custom-checkbox store-filter-group">
+          <div class="store-filter">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Open for delivery</label>
+          </div>
+          <div class="store-filter">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Free delivery</label>
+          </div>
+          <div class="store-filter">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">No delivery minimum</label>
+          </div>
+          <div class="store-filter">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Accepts credit cards</label>   
+          </div>                                             
+        </div>
+      </div>
+    </div>
+    <div class="store-cards-container col-9">
+      <h3>Stores</h3>
+      <div class="store-cards ">
+        <% @stores.each do |store| %>
+          <div class="card text-center ">
+            <%# <div class="card-header">
+              Featured
+            </div> %>
+            <%= link_to store_path(store) do%>
+              <div class="card-body">              
+                <div class="card-img ">
+                  <img src="store-1.jpg" alt="store front" width="200" height="200"/>
+                </div>
+                <div class="card-title-text ">
+                  <h5 class="card-title"><%= store.storeName %></h5>              
+                  <p class="card-text">Placeholder -- Open/Closed, Pickup/Delivery, distance</p>
+                </div>
+                <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+              </div>
+            <% end %>
+            <%# <div class="card-footer text-muted">
+              2 days ago
+            </div> %>
+          </div>
+        <% end %>  
+      </div>
+    </div>
+  </div>
+</div>

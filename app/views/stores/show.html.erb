@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="jumbotron">
+    <div class="store-jumbotron-details">
+      <img src="" alt="store-logo" />
+      <strong><%= @store.storeName %></strong>
+      <p>PH Store location(id)<%= @store.location_id %></p>
+      <p>PH Hours and More sub view</p>    
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="product-search-container">
+
+
+      <%= render 'products/product-cards'  %>   
+
+      
+    </div>  
+  </div>
+</div>
+
 
 <p>
   <strong>Storename:</strong>

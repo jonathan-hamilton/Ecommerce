@@ -3,6 +3,7 @@
 .navbar {
   background-color: #087e12  !important;
   border-radius: 0.3rem;
+  margin-bottom: 50px;
 } 
 
 .footer{
@@ -21,11 +22,36 @@
     font-weight: bold;
 }
 
-// .btn-home-search {
-//     color: #087e12;
-//     font-size: 20px;
-// }
+.store-filter-column{
+    float: left;
+    height: 100%;
+}
 
+.store-filter{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.card-body {
+    
+}
+
+.card-img {
+
+}
+
+.card-text-title {
+
+}
+
+.store-search-container {
+    display: flex;
+}
+
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .jumbotron {
     margin-top: 20px;
