@@ -1,21 +1,62 @@
+    
     <div class="product-filter-column col-3">
       <h6>Filters</h6>
-      <div class="input-group mb-3 mt-3">
+      <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Search</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+      </div> 
+      <div class="input-group dropdown mb-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Brand
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>           
+      <div class="input-group">
         <div class="custom-control custom-checkbox store-filter-group">
           <div class="store-filter">
             <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Open for delivery</label>
+            <label class="custom-control-label" for="customCheck1">Potted Plants</label>
           </div>                                          
         </div>
       </div>
+      <div class="input-group">
+        <div class="custom-control custom-checkbox store-filter-group">
+          <div class="store-filter">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Garden Supplies</label>
+          </div>                                          
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="custom-control custom-checkbox store-filter-group">
+          <div class="store-filter">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Irrigation</label>
+          </div>                                          
+        </div>
+      </div>
+      <div class="input-group">
+        <div class="custom-control custom-checkbox store-filter-group">
+          <div class="store-filter">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Lighting</label>
+          </div>                                          
+        </div>
+      </div>                  
     </div>    
-    <div class="product-cards-container col-9">
-      <h3>Featured</h3>
+    <div class="product-cards-container col-9">      
       <div class="product-cards">
+        <h3>Featured</h3>
         <% Product.all.each do |product| %>
           <div class="card text-center">
             <%= link_to product_path(product) do %>
-              <div class="card-body">
+              <div class="product-card-body">
                 <img src="" alt="product image">
                 <h4 class="card-title"><%= product.productName %></h4>
                 <h5 class="card-title">by Brand Id: <%= product.brand_id %></h5>
