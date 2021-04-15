@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'stores', to: 'stores#new'
   get 'admin', to: 'admin#show'
   get 'signup', to: 'customers#new'
+  get 'order', to: 'orders#show'
 end
