@@ -8,5 +8,7 @@ validates :email, presence: true,
     length: { maximum: 105 },
     format: { with: VALID_EMAIL_REGEX }
     
+    has_secure_password
+
     has_many :orders
 end
