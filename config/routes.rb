@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'stores', to: 'stores#new'
   get 'admin', to: 'admin#show'
+  get 'signup', to: 'customers#new'
 end

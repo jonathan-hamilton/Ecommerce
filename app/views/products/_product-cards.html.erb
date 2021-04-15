@@ -53,9 +53,8 @@
     <div class="product-cards-container col-9">      
       <div class="product-cards">
         <h3>Featured</h3>
-        <% Product.all.each do |product| %>
+        <% Product.find(ProductStore.where(store_id: @store).pluck(:product_id)).each do |product| %>
           <div class="card text-center">
-            <%= link_to product_path(product) do %>
               <div class="product-card-body">
                 <img src="" alt="product image">
                 <h4 class="card-title"><%= product.productName %></h4>
@@ -66,8 +65,7 @@
                     <p class="card-text">Price: <%= product.price %></p>
                   </div>
               </div>
-            <% end %>
           </div>
-        <% end %>
+        <% end %>        
       </div>
     </div>
