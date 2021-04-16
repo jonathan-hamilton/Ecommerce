@@ -1,13 +1,15 @@
 <div class="container-fluid">    
     <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
-        <%# <a class="navbar-brand" id="logo">GG</a> %>
         <%= link_to 'GG', root_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-            <input class="form-control mr-sm-2" type="search" id="nav-search" placeholder="Search" aria-label="Search">
+            <% if params[:controller] != 'pages' %>
+              <input class="form-control mr-sm-2" type="search" id="nav-search" placeholder="Search for stores..." aria-label="Search for stores...">
+            <% end %>
+            
             <div id="nav-login-su">                          
               <% if logged_in? %>
                 <%= link_to 'Log out', logout_path, class: "btn btn-outline-success my-2 my-sm-0", method: :delete %>
