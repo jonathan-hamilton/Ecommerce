@@ -8,11 +8,14 @@
       
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
             <input class="form-control mr-sm-2" type="search" id="nav-search" placeholder="Search" aria-label="Search">
-            <div id="nav-login-su">
-              <%= link_to 'Sign up', signup_path, class: "btn btn-outline-success my-2 my-sm-0" %>
-              <button class="btn btn-outline-success my-2 my-sm-0" id="nav-login" type="submit">Login</button>
+            <div id="nav-login-su">                          
+              <% if logged_in? %>
+                <%= link_to 'Log out', logout_path, class: "btn btn-outline-success my-2 my-sm-0", method: :delete %>
+              <% else %>
+                <%= link_to 'Log in', login_path, class: "btn btn-outline-success my-2 my-sm-0" %>
+                <%= link_to 'Sign up', signup_path, class: "btn btn-outline-success my-2 my-sm-0" %>  
+              <% end %>
               <%= link_to raw('&#128722'), order_path(1), class: "btn btn-outline-success my-2 my-sm-0" %>
-              <%# <button class="btn btn-outline-success my-2 my-sm-0" id="nav-signup" type="submit">Signup</button> %>
             </div>
         </div>
       </nav>
