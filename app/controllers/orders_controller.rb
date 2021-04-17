@@ -13,6 +13,9 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order.store_id = params[:id]
+    @order.customer = current_customer
+
   end
 
   # GET /orders/1/edit
@@ -22,7 +25,7 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
-    @order.customer = current_customer
+    # @order.customer = current_customer
 
     respond_to do |format|
       if @order.save

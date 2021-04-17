@@ -54,18 +54,20 @@
       <div class="product-cards">
         <h3>Featured</h3>
         <% Product.find(ProductStore.where(store_id: @store).pluck(:product_id)).each do |product| %>
-          <div class="card text-center">
-              <div class="product-card-body">
-                <img src="" alt="product image">
-                <h4 class="card-title"><%= product.productName %></h4>
-                <h5 class="card-title">by Brand Id: <%= product.brand_id %></h5>
-                <p class="card-text"><%= truncate(product.description, length: 100) %></p>
-                <p class="card-text">Type: <%= product.type_id %></p>
-                  <div class="product-price">
-                    <p class="card-text">Price: <%= product.price %></p>
-                  </div>
-              </div>
-          </div>
+          <%= link_to product_path(product) do%>
+            <div class="card text-center">
+                <div class="product-card-body">
+                  <img src="" alt="product image">
+                  <h4 class="card-title"><%= product.productName %></h4>
+                  <h5 class="card-title">by Brand Id: <%= product.brand_id %></h5>
+                  <p class="card-text"><%= truncate(product.description, length: 100) %></p>
+                  <p class="card-text">Type: <%= product.type_id %></p>
+                    <div class="product-price">
+                      <p class="card-text">Price: <%= product.price %></p>
+                    </div>
+                </div>
+            </div>
+          <% end %>
         <% end %>        
       </div>
     </div>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'admin', to: 'admin#show'
   get 'signup', to: 'customers#new'
   get 'order', to: 'orders#show'
+  # get 'order' to:'orders#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'

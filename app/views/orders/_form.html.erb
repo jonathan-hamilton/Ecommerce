@@ -1,3 +1,16 @@
+<div>
+  <div>
+    <h5>Order for:</h5>
+    <p class="text">Name: <%= current_customer.name %></p>
+    <p class="text">Email: <%= current_customer.email %></p>
+  </div>
+  <div>
+    <h5>Store:</h5>
+    <p class="text"><%= params %></p>    
+  </div>
+</div>
+
+
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +25,6 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :orderTotal %>
-    <%= form.text_field :orderTotal %>
-  </div>
-
-  <div class="field">
-    <%= form.label :customer_id %>
-    <%= form.number_field :customer_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :store_id %>
     <%= form.number_field :store_id %>
   </div>
@@ -30,6 +33,11 @@
     <%= form.label :line_item_id %>
     <%= form.number_field :line_item_id %>
   </div>
+
+  <div class="field">
+    <%= form.label :orderTotal %>
+    <%= form.text_field :orderTotal %>
+  </div>  
 
   <div class="actions">
     <%= form.submit %>

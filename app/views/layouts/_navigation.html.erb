@@ -13,11 +13,14 @@
             <div id="nav-login-su">                          
               <% if logged_in? %>
                 <%= link_to 'Log out', logout_path, class: "btn btn-outline-success my-2 my-sm-0", method: :delete %>
+                <% if (params[:controller] == 'stores' || 'products') && (params[:id] != nil) %>
+                  <%= link_to raw('&#128722'), new_order_path, class: "btn btn-outline-success my-2 my-sm-0" %>
+                <% end %>
               <% else %>
                 <%= link_to 'Log in', login_path, class: "btn btn-outline-success my-2 my-sm-0" %>
                 <%= link_to 'Sign up', signup_path, class: "btn btn-outline-success my-2 my-sm-0" %>  
               <% end %>
-              <%= link_to raw('&#128722'), order_path(1), class: "btn btn-outline-success my-2 my-sm-0" %>
+              
             </div>
         </div>
       </nav>

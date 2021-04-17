@@ -8,6 +8,7 @@ class StoresController < ApplicationController
 
   # GET /stores/1 or /stores/1.json
   def show
+    flash[:notice] = params
   end
 
   # GET /stores/new
