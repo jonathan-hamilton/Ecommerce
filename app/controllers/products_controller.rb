@@ -7,11 +7,13 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1 or /products/1.json
-  def show
+  def show    
+    flash[:notice] = 'Current customer_id: ' + session[:customer_id].to_s + ' product_id: ' +  @product.id.to_s + ' ' + @product.productName + ' ' + @product.description + ' ' + @product.price.to_s + ' category_id :' + @product.category_id.to_s + ' type_id :' + @product.type_id.to_s + ' brand_id :' + @product.brand_id.to_s 
+    # flash[:notice] = 'TEST: ' + product_params(@product).to_s
   end
 
   # GET /products/new
-  def new
+  def new        
     @product = Product.new
   end
 
@@ -21,6 +23,7 @@ class ProductsController < ApplicationController
 
   # POST /products or /products.json
   def create
+
     @product = Product.new(product_params)
 
     respond_to do |format|

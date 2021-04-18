@@ -1,5 +1,5 @@
 class LineItem < ApplicationRecord
-    validates :quantity, presence: true
+    # validates :quantity, presence: true
     validates :product, presence: true
 
 

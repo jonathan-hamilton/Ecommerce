@@ -13,9 +13,8 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
-    @order.store_id = params[:id]
+    @order.store_id = params[:store_id]
     @order.customer = current_customer
-
   end
 
   # GET /orders/1/edit

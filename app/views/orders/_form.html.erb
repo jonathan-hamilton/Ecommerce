@@ -11,7 +11,7 @@
 </div>
 
 
-<%= form_with(model: order, local: true) do |form| %>
+<%= form_with(model: order = Order.create(store_id: params[:store_id], line_item_id: 1, customer_id: current_customer.id), local: true) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -24,22 +24,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :store_id %>
-    <%= form.number_field :store_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :line_item_id %>
-    <%= form.number_field :line_item_id %>
-  </div>
-
-  <div class="field">
+  <div class="container field">
     <%= form.label :orderTotal %>
-    <%= form.text_field :orderTotal %>
+    <%= form.number_field :orderTotal %>
   </div>  
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="container actions">
+    <%= link_to "Save and Continue shopping", store_path(params[:store_id]), class:"btn btn-outline-success my-2 my-sm-0" %>
+  </div>
+
+  <div class="container actions">
+    <%= form.submit value="Place Order", class:"btn btn-outline-success my-2 my-sm-0" %>
   </div>
 <% end %>

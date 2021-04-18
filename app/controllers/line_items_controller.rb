@@ -23,6 +23,7 @@ class LineItemsController < ApplicationController
   # POST /line_items or /line_items.json
   def create
     @line_item = LineItem.new(line_item_params)
+    flash[:notice] = line_item_params
     #@line_item = LineItem.new(quantity:4, product_id:4)
 
     respond_to do |format|

@@ -15,11 +15,10 @@ class ApplicationController < ActionController::Base
     end
 
     def current_store
-        @current_store ||= @store
+        @current_store ||= Store.find(session[:customer_id]) if session[:customer_id]
     end
 
     def in_a_store?
         !!current_store
     end
-
 end
