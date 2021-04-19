@@ -4,5 +4,5 @@ class LineItem < ApplicationRecord
 
 
     belongs_to :product
-    has_one :order
+    belongs_to :order
 end

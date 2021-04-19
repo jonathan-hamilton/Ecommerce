@@ -14,7 +14,7 @@
     </thead>
 
     <tbody>
-      <% @line_items.where(line_item_id:[] do |line_item| %>
+      <% LineItem.all.each do |line_item| %>
         <tr>
           <td><%= line_item.id %></td>
           <td><%= line_item.quantity %></td>
