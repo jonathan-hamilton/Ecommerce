@@ -51,6 +51,17 @@ Customer.create!(name:"Jon", email:"jon@test.com", password:"123")
 Customer.create!(name: "Riley", email:"riley@test.com", password:"123")
 Customer.create!(name:"Jane", email:"jane@test.com", password:"123")
 
+ProductStore.create(store_id:1, product_id:1)
+ProductStore.create(store_id:1, product_id:2)
+ProductStore.create(store_id:1, product_id:3)
+ProductStore.create(store_id:1, product_id:4)
+ProductStore.create(store_id:1, product_id:5)
+ProductStore.create(store_id:1, product_id:6)
+
+ProductStore.create(store_id:2, product_id:1)
+ProductStore.create(store_id:2, product_id:2)
+ProductStore.create(store_id:2, product_id:3)
+
 # LineItem.create!(quantity: 1, product_id: 1)
 # LineItem.create!(quantity: 2, product_id: 2)
 # LineItem.create!(quantity: 3, product_id: 3)

@@ -60,6 +60,14 @@ class LineItemsController < ApplicationController
     end
   end
 
+  # def addToCart
+  #   if current_order == nil
+  #     @current_order = Order.new(customer_id: current_customer)
+  #   else
+
+  #   end
+  # end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item
@@ -68,6 +76,6 @@ class LineItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def line_item_params
-      params.require(:line_item).permit(:quantity, :product_id)
+      params.require(:line_item).permit(:quantity, :product_id, :order_id)
     end
 end

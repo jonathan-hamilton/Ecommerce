@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @order.store_id = params[:store_id]
-    @order.customer = current_customer
+    # @order.customer = current_customer
   end
 
   # GET /orders/1/edit
@@ -68,6 +68,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:orderTotal, :customer_id, :store_id, :line_item_id)
+      params.require(:order).permit(:orderTotal, :customer_id, :store_id)
     end
 end
