@@ -19,16 +19,8 @@
     <%= form.number_field :quantity %>
   </div>
 
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.number_field :product_id %>
-  </div>
-
-    <div class="field">
-    <%= form.label :order_id %>
-    <%= form.number_field :order_id %>
-  </div>
-
+  <%= form.hidden_field :product_id, value: params[:product_id] %>
+  <%= form.hidden_field :store_id, value: params[:store_id] %>
 
 
   <div class="actions">

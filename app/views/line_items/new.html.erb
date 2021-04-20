@@ -2,17 +2,20 @@
     <h1>New Line Item</h1>
 
     <div>
-        <h3>ProductId: <%= Product.find(1).id %></h3>
-        <h3>Featured: <%= Product.find(1).featured %></h3>
-        <h3>Product Name: <%= Product.find(1).productName %></h3>
-        <h3>Description: <%= Product.find(1).description %></h3>
-        <h3>Price: <%= Product.find(1).price %></h3>
-        <h3>CategoryId: <%= Product.find(1).category_id %></h3>
-        <h3>TypeId: <%= Product.find(1).type_id %></h3>
-        <h3>BrandId: <%= Product.find(1).brand_id %></h3>
+        <h3>ProductId: <%= Product.find(params[:product_id]).id %></h3>
+        <h3>Featured: <%= Product.find(params[:product_id]).featured %></h3>
+        <h3>Product Name: <%= Product.find(params[:product_id]).productName %></h3>
+        <h3>Description: <%= Product.find(params[:product_id]).description %></h3>
+        <h3>Price: <%= Product.find(params[:product_id]).price %></h3>
+        <h3>CategoryId: <%= Product.find(params[:product_id]).category_id %></h3>
+        <h3>TypeId: <%= Product.find(params[:product_id]).type_id %></h3>
+        <h3>BrandId: <%= Product.find(params[:product_id]).brand_id %></h3>
     </div>
 
     <%= render 'form', line_item: @line_item %>
 
+
+
     <%= link_to 'Back', line_items_path %>
+    <%= session.inspect %>
 </div>

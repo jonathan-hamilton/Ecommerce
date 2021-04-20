@@ -54,8 +54,7 @@
       <div class="product-cards">
         <h3>Featured</h3>
         <% Product.find(ProductStore.where(store_id: @store).pluck(:product_id)).each do |product| %>
-          <%# <%= link_to product_path(product) do%>
-          <%= link_to new_line_item_path(product) do %>
+          <%= link_to new_line_item_path(product_id: product.id, store_id: @store.id) do %>
             <div class="card text-center">
                 <div class="product-card-body">
                   <img src="" alt="product image">

@@ -20,23 +20,57 @@ class LineItemsController < ApplicationController
   def edit
   end
 
+
   # POST /line_items or /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
-    flash[:notice] = line_item_params
-    #@line_item = LineItem.new(quantity:4, product_id:4)
-
-    respond_to do |format|
-
-      if @line_item.save
-        format.html { redirect_to @line_item, notice: "Line item was successfully created." }
-        format.json { render :show, status: :created, location: @line_item }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
+    order = Order.find_by(customer_id:session[:customer_id])
+    if(order)
+      @line_item = LineItem.new(line_item_params)
+      @line_item.order_id = order.id
+      respond_to do |format|
+        if @line_item.save
+          format.html { redirect_to @line_item, notice: "Line item was successfully created." }
+          format.json { render :show, status: :created, location: @line_item }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        end
+      end      
+    else
+      newOrder = Order.create(customer_id:session[:customer_id])
+      newOrder.store_id = params[:store_id]
+      @line_item = LineItem.new(line_item_params)
+      @line_item.order_id = newOrder.id
+      respond_to do |format|
+        if @line_item.save
+          format.html { redirect_to @line_item, notice: "Line item was successfully created." }
+          format.json { render :show, status: :created, location: @line_item }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        end
+      end      
     end
   end
+
+
+  # POST /line_items or /line_items.json
+  # def create
+  #   @line_item = LineItem.new(line_item_params)
+  #   flash[:notice] = line_item_params
+  #   #@line_item = LineItem.new(quantity:4, product_id:4)
+
+  #   respond_to do |format|
+
+  #     if @line_item.save
+  #       format.html { redirect_to @line_item, notice: "Line item was successfully created." }
+  #       format.json { render :show, status: :created, location: @line_item }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @line_item.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /line_items/1 or /line_items/1.json
   def update
@@ -60,14 +94,6 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # def addToCart
-  #   if current_order == nil
-  #     @current_order = Order.new(customer_id: current_customer)
-  #   else
-
-  #   end
-  # end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item
@@ -77,5 +103,9 @@ class LineItemsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def line_item_params
       params.require(:line_item).permit(:quantity, :product_id, :order_id)
+    end
+
+    def product_params
+      params.require(:product)
     end
 end

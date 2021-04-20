@@ -1,11 +1,9 @@
 <div class="container-fluid"> 
     <h1>New Order</h1>
 
-    <%= session.inspect %>
-
     <%= render 'line_items', order: @order %>
-
-    <%# <%= render 'form', order: @order %> 
 
     <%= link_to 'Back', orders_path %>
 </div>    
+
+    <%= session.inspect %>

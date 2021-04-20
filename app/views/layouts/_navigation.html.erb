@@ -12,7 +12,7 @@
               <% if logged_in? %>
                 <%= link_to 'Log out', logout_path, class: "btn btn-outline-success my-2 my-sm-0", method: :delete %>
                 <% if (params[:controller] == 'stores' || 'products') && (params[:id] != nil) %>
-                  <%= link_to raw('&#128722'), new_order_path(store_id: current_store), class: "btn btn-outline-success my-2 my-sm-0" %> 
+                  <%= link_to raw('&#128722'), new_order_path(store_id: params[:id]), class: "btn btn-outline-success my-2 my-sm-0" %> 
                 <% end %>
               <% else %>
                 <%= link_to 'Log in', login_path, class: "btn btn-outline-success my-2 my-sm-0" %>

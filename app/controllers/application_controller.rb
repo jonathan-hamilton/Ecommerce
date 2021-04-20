@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
         @current_order ||= Order.find_by(customer_id: (session[:customer_id]))
     end
 
-    def current_store
-        @current_store ||= Store.find(session[:customer_id]) if session[:customer_id]
-    end
+    # def current_store
+    #     @current_store ||= Store.find(session[:customer_id]) if session[:customer_id]
+    # end
 end
