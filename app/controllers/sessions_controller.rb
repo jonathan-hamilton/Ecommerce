@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         if customer && customer.authenticate(params[:session][:password])
           session[:customer_id] = customer.id
           flash[:notice] = "Logged in successfully"
-          redirect_to customer
+          redirect_to stores_path
         else
           flash.now[:alert] = "There was something wrong with your login details"
           render 'new'
@@ -20,5 +20,4 @@ class SessionsController < ApplicationController
         flash[:notice] = "Logged out"
         redirect_to root_path        
     end
-
 end

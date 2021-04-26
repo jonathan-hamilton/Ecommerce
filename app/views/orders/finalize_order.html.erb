@@ -1,0 +1,5 @@
+<div class="container-fluid">  
+    <div>
+        <h5>Thank you <%= Customer.find_by(order_id:params[:order_id]).name %></h5>
+    </div>
+</div>

@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @order.store_id = params[:store_id]
-    # @order.customer = current_customer
+    @order.customer_id = params[:customer_id]
   end
 
   # GET /orders/1/edit
@@ -23,13 +23,15 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @order = Order.new(order_params)
+    # @order = Order.new(order_params)
+    @order = Order.new(store_id: params[:order][:store_id], customer_id: current_customer.id)
+    @product_id = params[:product_id]
     # @order.customer = current_customer
 
     respond_to do |format|
       if @order.save
 
-        format.html { redirect_to @order, notice: "Order was successfully created." }
+        format.html { redirect_to new_line_item_path(order_id: @order.id, product_id: @product_id), notice: "Order was successfully created." }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -68,6 +70,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:orderTotal, :customer_id, :store_id)
+      params.require(:order).permit(:orderTotal, :customer_id, :store_id, :product_id)
     end
 end

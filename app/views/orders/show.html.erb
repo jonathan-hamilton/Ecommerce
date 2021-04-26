@@ -1,19 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">  
 
-<p>
-  <strong>Ordertotal:</strong>
-  <%= @order.orderTotal %>
-</p>
+  <p>
+    <strong>Ordertotal:</strong>
+    <%= @order.orderTotal %>
+    todo
+  </p>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @order.customer_id %>
-</p>
+  <p>
+    <strong>Customer:</strong>
+    <%= @order.customer_id %>
+  </p>
 
-<p>
-  <strong>Store:</strong>
-  <%= @order.store_id %>
-</p>
+  <p>
+    <strong>Store:</strong>
+    <%= @order.store_id %>
+  </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+  <h1>Line Items</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Quantity</th>
+        <th>ProductId</th>
+        <th>OrderId</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% LineItem.where(order_id:params[:id]).each do |line_item| %>
+        <tr>
+          <td><%= line_item.id %></td>
+          <td><%= line_item.quantity %></td>
+          <td><%= line_item.product_id %></td>
+          <td><%= line_item.order_id %></td>
+          <td><%= link_to 'Show', line_item %></td>
+          <td><%= link_to 'Edit', edit_line_item_path(line_item) %></td>
+          <td><%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Continue Shopping?', store_url(@order.store_id), class: "btn btn-outline-success my-2 my-sm-0" %>
+
+  <%= link_to 'Finalize Order', order_url(@order.id), method: :delete, data: { confirm: 'Thank you, your order has been placed'},  class: "btn btn-outline-success my-2 my-sm-0"  %>
+
+  
+</div>
