@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  before_action :set_store, only: %i[ show edit update destroy ]
+  before_action :set_store, only: %i[ show edit update destroy store_pic ]
 
   # GET /stores or /stores.json
   def index
@@ -55,6 +55,10 @@ class StoresController < ApplicationController
       format.html { redirect_to stores_url, notice: "Store was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def store_pic(id)
+    @pic = "store-" + id + "-sm.jpg"   
   end
 
   private

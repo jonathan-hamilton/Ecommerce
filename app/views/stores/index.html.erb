@@ -27,25 +27,18 @@
       <h3>Stores</h3>
       <div class="store-cards ">
         <% @stores.each do |store| %>
-          <div class="card text-center ">
-            <%# <div class="card-header">
-              Featured
-            </div> %>
+          <div class="card text-center">
             <%= link_to store_path(store) do%>
-              <div class="card-body">              
-                <div class="card-img ">
-                  <img src="" alt="store front" width="200" height="200"/>
+              <div class="store-card-body">              
+                <div class="store-card-img container">
+                  <%= image_tag(store.pic, :alt => "store image") %>
                 </div>
-                <div class="card-title-text ">
-                  <h5 class="card-title"><%= store.storeName %></h5>              
-                  <p class="card-text">Placeholder -- Open/Closed, Pickup/Delivery, distance</p>
+                <div class="store-card-title-text container">
+                  <h5 class="store-card-title"><%= store.storeName %></h5>              
+                  <p class="store-card-text"><%= store.details %></p>
                 </div>
-                <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
               </div>
             <% end %>
-            <%# <div class="card-footer text-muted">
-              2 days ago
-            </div> %>
           </div>
         <% end %>  
       </div>

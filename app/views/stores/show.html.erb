@@ -1,11 +1,15 @@
  <div class="container-fluid"> 
   <div class="container-fluid">
     <div class="jumbotron">
-      <div class="store-jumbotron-details">
-        <img src="" alt="store-logo" />
-        <strong><%= @store.storeName %></strong>
-        <p>PH Store location(id)<%= @store.location_id %></p>
-        <p>PH Hours and More sub view</p>    
+      <div class="store-jumbotron">
+        <div class="store-jumbotron-logo">
+          <img src="" alt="store-logo" />
+        </div>
+        <div class="store-jumbotron-details">
+          <strong><%= @store.storeName %></strong>
+          <p>Store location: <%= @store.location_id %></p>
+          <p>Hours and more:</p>   
+        </div>       
       </div>
     </div>
     <div class="container-fluid">
