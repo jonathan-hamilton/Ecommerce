@@ -3,12 +3,12 @@
     <div class="jumbotron">
       <div class="store-jumbotron">
         <div class="store-jumbotron-logo">
-          <img src="" alt="store-logo" />
+          <%= image_tag(@store.logo, :alt => "store logo") %>
         </div>
         <div class="store-jumbotron-details">
           <strong><%= @store.storeName %></strong>
           <p>Store location: <%= @store.location_id %></p>
-          <p>Hours and more:</p>   
+          <p><%= @store.hours_and_more %></p>   
         </div>       
       </div>
     </div>
@@ -22,14 +22,4 @@
       </div>  
     </div>
   </div>
-
-  <p>
-    <strong>Storename:</strong>
-    <%= @store.storeName %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= @store.location_id %>
-  </p>
 </div>
