@@ -57,14 +57,18 @@
           <%= link_to new_line_item_path(customer_id: current_customer.id, store_id: @store.id, product_id: product.id) do %>
             <div class="card text-center">
                 <div class="product-card-body">
-                  <img src="" alt="product image">
-                  <h4 class="card-title"><%= product.productName %></h4>
-                  <h5 class="card-title">by Brand Id: <%= product.brand_id %></h5>
-                  <p class="card-text"><%= truncate(product.description, length: 100) %></p>
-                  <p class="card-text">Type: <%= product.type_id %></p>
-                    <div class="product-price">
-                      <p class="card-text">Price: <%= product.price %></p>
-                    </div>
+                  <%= image_tag(product.pic, :alt => "product pic") %>
+                  <table class="product-card-table">
+                    <tr>
+                      <th><%=product.productName%></th>
+                      <th><%=truncate(product.description, :length => 120) %></th>
+                    </tr>
+                    <tr>
+                      <td>by: (Brand) <%=product.brand_id%></td>
+                      <td>$<%=product.price%></td>
+                    </tr>
+                  </table>
+
                 </div>
             </div>
           <% end %>
