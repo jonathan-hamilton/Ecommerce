@@ -31,7 +31,7 @@
             <%= link_to store_path(store) do%>
               <div class="store-card-body">              
                 <div class="store-card-img container">
-                  <%= image_tag(store.pic, :alt => "store image") %>
+                  <%= image_tag(store.pic, :alt => "store image", class:"store-card-img") %>
                 </div>
                 <div class="store-card-title-text container">
                   <h5 class="store-card-title"><%= store.storeName %></h5>              

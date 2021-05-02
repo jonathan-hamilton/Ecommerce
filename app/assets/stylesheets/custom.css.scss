@@ -57,6 +57,7 @@
 .product-card-body {
     display: flex;
     height:100px;
+    
 }
 
 .store-search-container {
@@ -97,17 +98,32 @@
     width: 50px;
 }
 
-.store-card-body{
+.store-cards {
+    
+}
 
+.store-card-body{
+    display: flex;
+    align-items: center;
+
+}
+
+.store-card-body:hover{
+    background-color: #087e12;
 }
 
 .store-card-img{
     float: left;
     margin:5px;
+    border-radius: .5em;
+    display: flex;
+    justify-content: left;
+    
+
 }
 
 .store-card-title-text{
-    padding-top: 30px;
+
 }
 
 .product-card-table{

@@ -1,15 +1,18 @@
 <div class="container-fluid">
-    <h1>New Line Item</h1>
+    <h2>New Line Item</h2>
 
     <div>
-        <h3>ProductId: <%= params[:product_id] %></h3>
-        <h3>Featured: <%= Product.find(params[:product_id]).featured.to_s %></h3>
+        <h5>ProductId: <%= params[:product_id] %></h5>
+         <%= image_tag(Product.find(params[:product_id]).pic, :alt => "store logo") %>
+        <h4>Featured: <%= Product.find(params[:product_id]).featured.to_s %></h4>
         <h3>Product Name: <%= Product.find(params[:product_id]).productName %></h3>
+        <h3>By (BrandId): <%= Product.find(params[:product_id]).brand_id %></h3>
         <h3>Description: <%= Product.find(params[:product_id]).description%> </h3>
+        </br>
         <h3>Price: <%= Product.find(params[:product_id]).price %></h3>
         <h3>CategoryId: <%= Product.find(params[:product_id]).category_id %></h3>
         <h3>TypeId: <%= Product.find(params[:product_id]).type_id %></h3>
-        <h3>BrandId: <%= Product.find(params[:product_id]).brand_id %></h3>
+        
     </div>
 
     <%= render 'form', line_item: @line_item %>
