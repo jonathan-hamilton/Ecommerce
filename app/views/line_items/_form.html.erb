@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= form.label :quantity %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :quantity, max: 10, min: 0 %>
   </div>
 
     <%= form.hidden_field :product_id, value: params[:product_id] %>
@@ -24,6 +24,6 @@
       
     
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add to cart" %>
   </div>
 <% end %>

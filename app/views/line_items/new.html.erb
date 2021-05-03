@@ -3,11 +3,33 @@
 
     <div class="container product-detail">
         <div class="product-detail-elements">
-            <h5>(BrandId) <%= Product.find(params[:product_id]).brand_id  %></h5>
-            <h4><%= Product.find(params[:product_id]).productName %></h4>
-            <h5>Price: <%= number_to_currency(Product.find(params[:product_id]).price) %></h5>
-            <h5>TypeId: <%= Product.find(params[:product_id]).type_id %></h5>
-            <p>Description: <%= Product.find(params[:product_id]).description%> </p>
+            <table>
+                <tr>
+                    <th>
+                        (BrandId) <%= Product.find(params[:product_id]).brand_id  %>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <%= Product.find(params[:product_id]).productName %>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Price: <%= number_to_currency(Product.find(params[:product_id]).price) %>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        TypeId: <%= Product.find(params[:product_id]).type_id %>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Description: <%= Product.find(params[:product_id]).description%>
+                    </th>
+                </tr>                                                                
+            </table>            
         </div>
         <div class="product-detail-form">
             <%= image_tag(Product.find(params[:product_id]).pic, :alt => "product pic") %>
