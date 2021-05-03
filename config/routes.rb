@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'erdiagram/new'
+  get 'erdiagram/create'
   resources :line_items
   resources :stores
   resources :products
@@ -21,4 +23,5 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   get 'customer', to: 'customers#show'
+  get 'erdiagram', to: 'erdiagram#index'
 end
