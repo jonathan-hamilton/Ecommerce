@@ -56,8 +56,7 @@
 
 .product-card-body {
     display: flex;
-    height:100px;
-    
+    height: 100px;  
 }
 
 .store-search-container {
@@ -117,15 +116,44 @@
     margin:5px;
     border-radius: .5em;
     display: flex;
-    justify-content: left;
-    
-
+    justify-content: left;    
 }
 
-.store-card-title-text{
-
+.product-card:hover{
+    background-color: #087e12;
 }
 
-.product-card-table{
-    // width:300px;
+.product-card-image{
+    // float: left;
+}
+
+.product-card-description{
+    margin-bottom: 10px;
+}
+
+.product-card-price{
+    // margin-top: 50px;
+    display: flex;
+    align-items: center;
+    margin-right:10px;
+}
+
+.product-detail{
+    height: 150px;
+}
+
+.product-detail-elements{
+    display: flex;
+    width: 75%;
+    float: left;
+}
+.product-detail-form{
+    display: flex;
+    width: 25%;
+    float: right;
+}
+
+.product-detail-pic {
+    height: 200px;
+    width: 200px;
 }

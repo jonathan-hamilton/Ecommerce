@@ -55,20 +55,19 @@
         <h3>Featured</h3>
         <% Product.find(ProductStore.where(store_id: @store).pluck(:product_id)).each do |product| %>
           <%= link_to new_line_item_path(customer_id: current_customer.id, store_id: @store.id, product_id: product.id) do %>
-            <div class="card text-center">
+            <div class="card product-card text-center">
                 <div class="product-card-body">
-                  <%= image_tag(product.pic, :alt => "product pic") %>
-                  <table class="product-card-table">
-                    <tr>
-                      <th><%=product.productName%></th>
-                      <th><%=truncate(product.description, :length => 120) %></th>
-                    </tr>
-                    <tr>
-                      <td>by: (Brand) <%=product.brand_id%></td>
-                      <td>$<%=product.price%></td>
-                    </tr>
-                  </table>
-
+                  <div class="product-card-image">
+                    <%= image_tag(product.pic, :alt => "product pic", class:"product-card-image") %>
+                  </div>
+                  <div class="product-card-description">
+                    <h5><%=product.productName%></h5>
+                    <p>By (brand_id) <%=product.brand_id%></p>
+                    <p><%=truncate(product.description, :length => 150)%></p>
+                  </div>
+                  <div class="product-card-price">
+                      <p><%=number_to_currency(product.price)%></p>
+                  </div>
                 </div>
             </div>
           <% end %>
