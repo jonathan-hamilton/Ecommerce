@@ -18,15 +18,15 @@ Customer.delete_all
 Store.delete_all
 Location.delete_all
 
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Brand'") 
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Type'") 
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Category'") 
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Product'")
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Customer'")
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'LineItem'") 
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Order'")
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Location'") 
-ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Store'") 
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Brand'") 
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Type'") 
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Category'") 
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Product'")
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Customer'")
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'LineItem'") 
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Order'")
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Location'") 
+# ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'Store'") 
 
 Brand.create!(brandName: "Brand 1")
 Brand.create!(brandName: "Brand 2")
