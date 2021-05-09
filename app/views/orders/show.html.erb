@@ -42,7 +42,7 @@
 
   <%= link_to 'Continue Shopping?', store_url(@order.store_id), class: "btn btn-outline-success my-2 my-sm-0" %>
 
-  <%= link_to 'Finalize Order', order_url(@order.id), method: :delete, data: { confirm: 'Thank you, your order has been placed'},  class: "btn btn-outline-success my-2 my-sm-0"  %>
+  <%= link_to 'Finalize Order', order_url(@order.id), method: :delete, data: { confirm: 'Thank you, your order has been placed. You will receive a confirmation email shortly.'},  class: "btn btn-outline-success my-2 my-sm-0"  %>
 
   
 </div>
