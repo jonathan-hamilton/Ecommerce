@@ -1,16 +1,12 @@
 <div class="container-fluid">  
 
   <p>
-    <strong>Customer:</strong>
-    <%= @order.customer_id %>
+    <strong><%= "Hi, " + Customer.find(@order.customer_id).name %></strong>
+    <%= " here's your current order from" %>
+    <%= Store.find(@order.store_id).storeName %>
   </p>
 
-  <p>
-    <strong>Store:</strong>
-    <%= @order.store_id %>
-  </p>
-
-  <h5>Your Order: (Line_items)</h5>
+  <h6>Order# <%= @order.id %></h6>
 
   <table>
     <thead>
@@ -41,7 +37,6 @@
 
     <p>
     <strong>Ordertotal:</strong>
-    <%= @order.orderTotal %>
     todo
   </p>
 
