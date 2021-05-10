@@ -14,8 +14,6 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
 
-    <div class="erd-diagram">
-      <%= link_to "ER and Table Diagrams", erdiagram_path, id:"erd-diagram" %>
-    </div>
+    <%= link_to "ER and Table Diagrams", erdiagram_path, id:"erd-diagram", class:"container-fluid" %>
   </body>
 </html>
